@@ -68,7 +68,7 @@ class Cropper():
         tmp_size = tuple(map(lambda x: x * 2, mask_size))
         mask = Image.new('L', tmp_size, 0)
         ImageDraw.Draw(mask).ellipse((0, 0) + tmp_size, fill=255)
-        mask = mask.resize(mask_size, Image.ANTIALIAS)
+        mask = mask.resize(mask_size, Image.LANCZOS)
         self.ellipse = ImageOps.fit(self.cropped, mask_size, method=Image.LANCZOS, centering=(0.5, 0.5))
         self.ellipse.putalpha(mask)
         print("[%s] Ellipse: [W: %d, H: %d]" % ((self.filename,) + mask_size))
