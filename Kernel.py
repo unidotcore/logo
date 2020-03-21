@@ -48,7 +48,6 @@ class Cropper():
         if not path.exists(file):
             raise FileExistsError('Unable to find image file at: %s' % path)
         self.exports_count = 0
-        self.ellipse = None
         self.basedir = path.dirname(file)
         self.filename, self.extension = path.splitext(path.basename(file))
         self.image = Image.open(file)
