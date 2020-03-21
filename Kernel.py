@@ -16,10 +16,12 @@ class Config():
     def getMap(self):
         if self.type == self.LEFT:
             return (328, 3, 778, 454)
-        if self.type == self.CENTER:
+        elif self.type == self.CENTER:
             return (556, 3, 1005, 454)
-        if self.type == self.RIGHT:
+        elif self.type == self.RIGHT:
             return (782, 3, 1232, 454)
+        else:
+            return (0, 0, 1, 1)
 
 
 class Rect():
